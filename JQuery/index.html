@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Profile Card</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="profile-card">
+<h1> JQuery Profile Card </h1>
+        <img id="profile-photo"
+             src="./images/photos.jpeg"
+             alt="Profile Photo">
+
+        <h2 id="student-name">Sudeep Bista</h2>
+
+        <p id="student-bio">
+            <b>I'm a BScIT Student</b> who loves Web Development and JavaScript.
+        </p>
+
+        <input type="text" id="nickname-input" placeholder="Enter nickname">
+
+        <ul id="skills-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+        </ul>
+
+    </div>
+
+    <!-- GET & SET -->
+    <button id="showName">Show Name</button>
+    <button id="changeName">Change Name</button>
+    <button id="showBio">Show Bio</button>
+    <button id="getInput">Get Input</button>
+    <button id="setInput">Set Input</button>
+
+    <hr>
+
+    <!-- CSS CLASSES -->
+    <button id="highlightCard">Highlight Card</button>
+    <button id="removeHighlight">Remove Highlight</button>
+    <button id="toggleDark">Toggle Dark Mode</button>
+    <button id="toggleRounded">Toggle Rounded</button>
+
+    <hr>
+
+    <!-- CSS METHOD -->
+    <button id="redBg">Red Background</button>
+    <button id="resetBg">Reset Background</button>
+
+    <hr>
+
+    <!-- HIDE & SHOW -->
+    <button id="hidePhoto">Hide Photo</button>
+    <button id="showPhoto">Show Photo</button>
+    <button id="toggleBio">Toggle Bio</button>
+
+    <hr>
+
+    <!-- FADE -->
+    <button id="fadeOutCard">Fade Out Card</button>
+    <button id="fadeInCard">Fade In Card</button>
+    <button id="fade50">Fade to 50%</button>
+
+    <hr>
+
+    <!-- SLIDE -->
+    <button id="slideUp">Slide Up Skills</button>
+    <button id="slideDown">Slide Down Skills</button>
+    <button id="slideToggle">Slide Toggle Skills</button>
+
+    <hr>
+
+    <!-- ANIMATE -->
+    <button id="animateCard">Animate Card</button>
+
+    <div id="output"></div>
+
+</body>
+</html>
