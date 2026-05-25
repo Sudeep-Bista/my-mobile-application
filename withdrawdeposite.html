@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bank System</title>
+    <style>
+        body{
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .box{
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        input{
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button{
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        h2{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Simple Bank</h1>
+
+        <h2>Balance: Rs. <span id="balance">10000</span></h2>
+
+        <input type="number" id="amount" placeholder="Enter amount">
+
+        <br>
+
+        <button onclick="bank('deposit')">Deposit</button>
+        <button onclick="bank('withdraw')">Withdraw</button>
+    </div>
+
+    <script>
+
+        let balance = 10000;
+        const correctPin = "1234";
+
+        function bank(type){
+
+            let amount = Number(document.getElementById("amount").value);
+
+        
+            if(amount <= 0){
+                alert("Enter valid amount");
+                return;
+            }
+
+        
+            if(amount % 100 !== 0){
+                alert("Amount must be multiple of 100");
+                return;
+            }
+
+            
+            let pin = prompt("Enter your PIN");
+
+            if(pin !== correctPin){
+                alert("Wrong PIN");
+                return;
+            }
+
+            
+            if(type === "deposit"){
+                balance = balance + amount;
+                alert("Deposit Successful");
+            }
+
+            
+            else if(type === "withdraw"){
+
+                if(amount > balance){
+                    alert("Insufficient Balance");
+                    return;
+                }
+
+                balance = balance - amount;
+                alert("Withdraw Successful");
+            }
+
+            
+            document.getElementById("balance").innerText = balance;
+
+        
+            document.getElementById("amount").value = "";
+        }
+
+    </script>
+
+</body>
+</html>

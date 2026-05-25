@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title> my Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(248, 247, 253);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #5f5a5a;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #total, #result {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Calculator</h1>
+
+        <input type="number" id="m1" placeholder="Enter first number">
+        <input type="number" id="m2" placeholder="Enter second number">
+
+        <button onclick="calculateResult('add')">Addition</button>
+        <button onclick="calculateResult('sub')">Subtraction</button>
+        <button onclick="calculateResult('mul')">Multiplication</button>
+        <button onclick="calculateResult('div')">Division</button>
+
+        <p id="total"></p>
+
+    </div>
+
+    <script>
+
+        function calculateResult(operation) {
+
+            let m1 = Number(document.getElementById("m1").value);
+            let m2 = Number(document.getElementById("m2").value);
+
+            let result;
+
+            if (operation == "add") {
+
+                result = m1 + m2;
+
+            }
+
+            else if (operation == "sub") {
+
+                result = m1 - m2;
+
+            }
+
+            else if (operation == "mul") {
+
+                result = m1 * m2;
+
+            }
+
+            else if (operation == "div") {
+
+                result = m1 / m2;
+
+            }
+
+            document.getElementById("total").innerHTML =
+                "Result = " + result;
+
+        }
+
+    </script>
+
+</body>
+</html>
