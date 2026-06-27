@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobKhoj Nepal - Find Your Dream Job</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-briefcase"></i> JobKhoj<span>Nepal</span></a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="profile.html" class="nav-link" id="navProfile" style="display: none;">My Profile</a>
+                <a href="login.html" class="nav-link" id="navLogin">Login</a>
+                <button id="themeToggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Find Your Dream Job in <span>Nepal</span></h1>
+            <p>Discover thousands of opportunities in IT, Banking, Education, and more.</p>
+            
+            <div class="search-container">
+                <div class="search-input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchKeyword" placeholder="Job title, keywords, or company...">
+                </div>
+                <div class="search-input">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="searchLocation" placeholder="City (e.g., Kathmandu, Pokhara)...">
+                </div>
+                <button type="button" id="searchBtn" class="btn btn-primary">Search Jobs</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dashboard-stats" id="dashboardStats" style="display: none;">
+            <div class="stat-card">
+                <i class="fa-solid fa-layer-group"></i>
+                <div>
+                    <h3 id="statTotalJobs">0</h3>
+                    <p>Available Jobs</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-paper-plane"></i>
+                <div>
+                    <h3 id="statApplied">0</h3>
+                    <p>Applied Jobs</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-bookmark"></i>
+                <div>
+                    <h3 id="statSaved">0</h3>
+                    <p>Saved Jobs</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="category-tags" id="categoryContainer">
+                </div>
+        </section>
+
+        <section class="jobs-section">
+            <div class="section-header">
+                <h2 class="section-title">Latest Job Openings</h2>
+                <span id="jobCount">Showing 0 jobs</span>
+            </div>
+            <div class="jobs-grid" id="jobsGrid">
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 JobKhoj Nepal. Built for professionals across Nepal.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
