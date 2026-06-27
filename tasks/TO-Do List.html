@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>To-Do List Application</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .add-btn {
+            background-color: blue;
+            color: white;
+        }
+
+        .done-btn {
+            background-color: green;
+            color: white;
+        }
+
+        .delete-btn {
+            background-color: red;
+            color: white;
+        }
+
+        li {
+            background: #eee;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>To-Do List</h1>
+
+        <input type="text" id="taskInput" placeholder="Enter task">
+
+        <button class="add-btn" onclick="addTask()">Add</button>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script>
+
+        // Load tasks from localStorage
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        displayTasks();
+
+        // Add Task
+        function addTask() {
+
+            let taskInput = document.getElementById("taskInput");
+
+            let taskText = taskInput.value.trim();
+
+            // Error handling
+            if (taskText === "") {
+
+                alert("Please enter a task!");
+
+                return;
+            }
+
+            // Create task object
+            let task = {
+
+                text: taskText,
+                completed: false
+            };
+
+            tasks.push(task);
+
+            saveTasks();
+
+            displayTasks();
+
+            taskInput.value = "";
+        }
+
+        // Display Tasks
+        function displayTasks() {
+
+            let taskList = document.getElementById("taskList");
+
+            taskList.innerHTML = "";
+
+            tasks.forEach((task, index) => {
+
+                let li = document.createElement("li");
+
+                // Completed style
+                if (task.completed) {
+
+                    li.classList.add("completed");
+                }
+
+                li.innerHTML = `
+                    ${task.text}
+
+                    <div>
+                        <button class="done-btn"
+                            onclick="markDone(${index})">
+                            Done
+                        </button>
+
+                        <button class="delete-btn"
+                            onclick="deleteTask(${index})">
+                            Delete
+                        </button>
+                    </div>
+                `;
+
+                taskList.appendChild(li);
+            });
+        }
+
+        // Mark Task Completed
+        function markDone(index) {
+
+            // Error handling
+            if (tasks[index] === undefined) {
+
+                alert("Task does not exist!");
+
+                return;
+            }
+
+            tasks[index].completed = true;
+
+            saveTasks();
+
+            displayTasks();
+        }
+
+        // Delete Task
+        function deleteTask(index) {
+
+            // Error handling
+            if (tasks[index] === undefined) {
+
+                alert("Task does not exist!");
+
+                return;
+            }
+
+            tasks.splice(index, 1);
+
+            saveTasks();
+
+            displayTasks();
+        }
+
+        // Save tasks in localStorage
+        function saveTasks() {
+
+            localStorage.setItem("tasks",
+                JSON.stringify(tasks));
+        }
+
+    </script>
+
+</body>
+
+</html>

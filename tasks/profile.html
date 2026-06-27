@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Instagram Profile Object</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-card {
+            background-color: white;
+            width: 700px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px gray;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-card img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .info {
+            flex: 1;
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top h2 {
+            margin: 0;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .follow {
+            background-color: #0095f6;
+            color: white;
+        }
+
+        .message {
+            background-color: #ddd;
+        }
+
+        .stats {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .bio {
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-card">
+
+        <img src="https://avatars.githubusercontent.com/u/217779476?v=4"
+            alt="Profile">
+
+        <div class="info">
+
+            <div class="top">
+
+                <h2 id="username"></h2>
+
+                <button class="follow">Follow</button>
+
+                <button class="message">Message</button>
+
+            </div>
+
+            <div class="stats">
+
+                <p id="posts"></p>
+
+                <p id="followers"></p>
+
+                <p id="following"></p>
+
+            </div>
+
+            <div class="bio">
+
+                <p id="name"></p>
+
+                <p id="profession"></p>
+
+                <p id="company"></p>
+
+                <p id="quote"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // Profile Object
+        const profile = {
+
+            username: "noir_sudeep",
+            posts: 123,
+            followers: "152K",
+            following: 173,
+            name: "Sudeep Bista",
+            profession: "Student",
+            company: "Hamro Mithoo Daal Pvt. Ltd.",
+            quote: "Motivation comes and goes, but dicipline stays ❤️"
+        };
+
+        // Display Data
+        document.getElementById("username").innerHTML =
+            profile.username + " "+ "✓";
+
+        document.getElementById("posts").innerHTML =
+            profile.posts + " posts";
+
+        document.getElementById("followers").innerHTML =
+            profile.followers + " followers";
+
+        document.getElementById("following").innerHTML =
+            profile.following + " following";
+
+        document.getElementById("name").innerHTML =
+            "<b>" + profile.name + "</b>";
+
+        document.getElementById("profession").innerHTML =
+            profile.profession;
+
+        document.getElementById("company").innerHTML =
+            profile.company;
+
+        document.getElementById("quote").innerHTML =
+            profile.quote;
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Product Object</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7e2e2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            text-align: center;
+        }
+
+        img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .rating {
+            color: orange;
+            font-size: 18px;
+        }
+
+        .reviews {
+            color: gray;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+        }
+
+        .offer {
+            color: red;
+            font-weight: bold;
+        }
+
+        .deal {
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <img src="https://scriveiner.com/cdn/shop/files/0_1_1f531c04-a9e1-4bfe-9d21-19fedb7e09ab.jpg?v=1764662816&width=3683" alt="Pen">
+
+        <h2 id="name"></h2>
+
+        <p id="color"></p>
+
+        <p class="rating" id="rating"></p>
+
+        <p class="reviews" id="reviews"></p>
+
+        <p class="price" id="price"></p>
+
+        <p class="offer" id="offer"></p>
+
+        <div class="deal" id="deal"></div>
+
+    </div>
+
+    <script>
+
+        // Product Object
+        const product = {
+
+            name: "Scriveiner Classic Black Lucquer Ballpoint Pen",
+            color: "Black",
+           
+            rating: 4,
+            reviews: 7002,
+            price: 299,
+            offer: "10% Off",
+            deal: "Buy Now"
+        };
+
+        // Display Data
+        document.getElementById("name").innerHTML = product.name;
+
+        document.getElementById("color").innerHTML =
+            "Color: " + product.color;
+
+        document.getElementById("rating").innerHTML =
+            "Rating: " + product.rating + " ★";
+
+        document.getElementById("reviews").innerHTML =
+            product.reviews + " Reviews";
+
+        document.getElementById("price").innerHTML =
+            "Rs. " + product.price;
+
+        document.getElementById("offer").innerHTML =
+            product.offer;
+
+        document.getElementById("deal").innerHTML =
+            product.deal;
+
+    </script>
+
+</body>
+
+</html>
